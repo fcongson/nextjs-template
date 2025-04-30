@@ -34,6 +34,9 @@ export default function Home() {
               priority
             />
           </Link>
+          <Link href="/start" className={styles.secondary}>
+            Start →
+          </Link>
         </div>
       </footer>
     </div>
