@@ -3,6 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+
+// Shared styles
+import layoutStyles from "@/styles/layouts/page.module.css";
+import buttonStyles from "@/styles/components/buttons.module.css";
+import typographyStyles from "@/styles/utilities/typography.module.css";
+
+// Page-specific styles
 import styles from "./page.module.css";
 
 export default function Home(): React.JSX.Element {
@@ -18,15 +25,15 @@ export default function Home(): React.JSX.Element {
   }, []);
 
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <h1 className={styles.time}>{!isMounted ? null : time}</h1>
+    <div className={layoutStyles.pageGrid}>
+      <main className={layoutStyles.main}>
+        <h1 className={typographyStyles.tabularNums}>{!isMounted ? null : time}</h1>
       </main>
-      <footer className={styles.footer}>
-        <div className={styles.ctas}>
-          <Link href="/next" className={styles.secondary}>
+      <footer className={layoutStyles.footer}>
+        <div className={buttonStyles.buttonGroup}>
+          <Link href="/next" className={buttonStyles.secondary}>
             <Image
-              className={styles.logo}
+              className={typographyStyles.logo}
               src="/next.svg"
               alt="Next.js logo"
               width={90}
@@ -34,7 +41,7 @@ export default function Home(): React.JSX.Element {
               priority
             />
           </Link>
-          <Link href="/start" className={styles.secondary}>
+          <Link href="/start" className={buttonStyles.secondary}>
             Start →
           </Link>
         </div>

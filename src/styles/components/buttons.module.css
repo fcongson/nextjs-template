@@ -1,0 +1,65 @@
+/* Button Components */
+.button {
+  appearance: none;
+  border-radius: 128px;
+  height: 48px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.primary {
+  composes: button;
+  background: var(--foreground);
+  color: var(--background);
+  gap: 8px;
+}
+
+.secondary {
+  composes: button;
+  border-color: var(--gray-alpha-200);
+  min-width: 158px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 16px;
+}
+
+/* Hover states */
+@media (hover: hover) and (pointer: fine) {
+  .primary:hover {
+    background: var(--button-primary-hover);
+    border-color: transparent;
+  }
+
+  .secondary:hover {
+    background: var(--button-secondary-hover);
+    border-color: transparent;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .buttonGroup {
+    flex-direction: column;
+  }
+
+  .button {
+    font-size: 14px;
+    height: 40px;
+    padding: 0 16px;
+  }
+
+  .secondary {
+    min-width: auto;
+  }
+}
