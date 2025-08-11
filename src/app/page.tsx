@@ -1,23 +1,23 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
-// Shared styles
-import layoutStyles from "@/styles/layouts/page.module.css";
+// Components
+import { Button, PageLayout, PageFooter } from "@/components";
+
+// Hooks
+import { useMounted } from "@/hooks";
+
+// Styles
 import buttonStyles from "@/styles/components/buttons.module.css";
 import typographyStyles from "@/styles/utilities/typography.module.css";
 
-// Page-specific styles
-import styles from "./page.module.css";
-
 export default function Home(): React.JSX.Element {
   const [time, setTime] = useState<string>("");
-  const [isMounted, setIsMounted] = useState<boolean>(false);
+  const isMounted = useMounted();
 
   useEffect(() => {
-    setIsMounted(true);
     const updateTime = (): void => setTime(new Date().toLocaleTimeString());
     updateTime();
     const interval = setInterval(updateTime, 1000);
@@ -25,13 +25,14 @@ export default function Home(): React.JSX.Element {
   }, []);
 
   return (
-    <div className={layoutStyles.pageGrid}>
-      <main className={layoutStyles.main}>
-        <h1 className={typographyStyles.tabularNums}>{!isMounted ? null : time}</h1>
-      </main>
-      <footer className={layoutStyles.footer}>
+    <PageLayout>
+      <h1 className={typographyStyles.tabularNums}>
+        {isMounted ? time : '00:00:00'}
+      </h1>
+      
+      <PageFooter>
         <div className={buttonStyles.buttonGroup}>
-          <Link href="/next" className={buttonStyles.secondary}>
+          <Button href="/next" variant="secondary">
             <Image
               className={typographyStyles.logo}
               src="/next.svg"
@@ -40,12 +41,12 @@ export default function Home(): React.JSX.Element {
               height={19}
               priority
             />
-          </Link>
-          <Link href="/start" className={buttonStyles.secondary}>
+          </Button>
+          <Button href="/start" variant="secondary">
             Start →
-          </Link>
+          </Button>
         </div>
-      </footer>
-    </div>
+      </PageFooter>
+    </PageLayout>
   );
 }
