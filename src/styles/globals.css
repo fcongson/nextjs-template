@@ -10,16 +10,16 @@
   /* Colors */
   --background: #ffffff;
   --foreground: #171717;
-  
+
   /* Grays */
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
   --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-  
+
   /* Interactive States */
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
-  
+
   /* Spacing Scale */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -27,13 +27,13 @@
   --spacing-lg: 24px;
   --spacing-xl: 32px;
   --spacing-2xl: 64px;
-  
+
   /* Border Radius */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
   --radius-full: 128px;
-  
+
   /* Typography */
   --font-size-sm: 14px;
   --font-size-base: 16px;
@@ -47,15 +47,15 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    
+
     --gray-rgb: 255, 255, 255;
     --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
     --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-    
+
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
   }
-  
+
   html {
     color-scheme: dark;
   }

@@ -18,7 +18,9 @@ export function PageLayout({
 }: PageLayoutProps): React.JSX.Element {
   return (
     <div className={cn(layoutStyles.pageGrid, className)}>
-      <main className={centered ? layoutStyles.mainCentered : layoutStyles.main}>
+      <main
+        className={centered ? layoutStyles.mainCentered : layoutStyles.main}
+      >
         {children}
       </main>
     </div>

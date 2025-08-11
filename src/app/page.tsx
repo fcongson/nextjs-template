@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 // Components
-import { Button, PageLayout, PageFooter } from "@/components";
+import { Button, PageLayout, PageFooter } from '@/components';
 
 // Hooks
-import { useMounted } from "@/hooks";
+import { useMounted } from '@/hooks';
 
 // Styles
-import buttonStyles from "@/styles/components/buttons.module.css";
-import typographyStyles from "@/styles/utilities/typography.module.css";
+import buttonStyles from '@/styles/components/buttons.module.css';
+import typographyStyles from '@/styles/utilities/typography.module.css';
 
 export default function Home(): React.JSX.Element {
-  const [time, setTime] = useState<string>("");
+  const [time, setTime] = useState<string>('');
   const isMounted = useMounted();
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function Home(): React.JSX.Element {
       <h1 className={typographyStyles.tabularNums}>
         {isMounted ? time : '00:00:00'}
       </h1>
-      
+
       <PageFooter>
         <div className={buttonStyles.buttonGroup}>
           <Button href="/next" variant="secondary">

@@ -48,6 +48,7 @@ nextjs-template/
 ## 🧩 Core Concepts
 
 ### 1. **Separation of Concerns**
+
 - **Components**: Reusable UI elements
 - **Hooks**: Stateful logic extraction
 - **Utils**: Pure utility functions
@@ -55,6 +56,7 @@ nextjs-template/
 - **Constants**: Configuration values
 
 ### 2. **Barrel Exports**
+
 Each directory has an `index.ts` file that re-exports everything, making imports cleaner:
 
 ```tsx
@@ -67,7 +69,9 @@ import { Button, PageLayout } from '@/components';
 ```
 
 ### 3. **Path Aliases**
+
 Configured in `tsconfig.json` for cleaner imports:
+
 - `@/components` → `src/components`
 - `@/hooks` → `src/hooks`
 - `@/lib` → `src/lib`
@@ -78,28 +82,33 @@ Configured in `tsconfig.json` for cleaner imports:
 ## 📝 File Naming Conventions
 
 ### Components
+
 - **PascalCase** for component files: `Button.tsx`
 - **camelCase** for non-component files: `utils.ts`
 - **kebab-case** for CSS files: `button.module.css`
 
 ### Directories
+
 - **kebab-case** for all directories: `use-local-storage.ts`
 - **PascalCase** for component directories when needed
 
 ## 🔧 Adding New Features
 
 ### Adding a New Component
+
 1. Create component file in appropriate subdirectory of `src/components/`
 2. Add corresponding CSS module in `src/styles/components/`
 3. Export from `src/components/index.ts`
 4. Add TypeScript types to `src/types/index.ts` if needed
 
 ### Adding a New Hook
+
 1. Create hook file in `src/hooks/` with `use-` prefix
 2. Export from `src/hooks/index.ts`
 3. Add TypeScript types if needed
 
 ### Adding New Utilities
+
 1. Add functions to `src/lib/utils.ts` or create new utility file
 2. Add corresponding TypeScript types if needed
 
@@ -115,18 +124,21 @@ Configured in `tsconfig.json` for cleaner imports:
 ## 📚 Best Practices
 
 ### Component Organization
+
 - Keep components small and focused
 - Use composition over inheritance
 - Extract reusable logic into custom hooks
 - Keep styles close to components
 
 ### TypeScript Usage
+
 - Define types for all props and return values
 - Use `interface` for object shapes
 - Use `type` for unions and computed types
 - Export types that might be reused
 
 ### Import Organization
+
 ```tsx
 // 1. External libraries
 import React from 'react';
@@ -141,6 +153,7 @@ import styles from './styles.module.css';
 ```
 
 ### CSS Organization
+
 - Use CSS Modules for component styles
 - Keep utility classes in dedicated files
 - Use CSS custom properties for theming
@@ -149,6 +162,7 @@ import styles from './styles.module.css';
 ## 🚀 Extending the Structure
 
 As your project grows, consider adding:
+
 - `src/context/` - React Context providers
 - `src/services/` - API services and data fetching
 - `src/store/` - Global state management (Zustand, Redux)

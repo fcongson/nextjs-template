@@ -29,45 +29,50 @@ src/
 ## 🎯 CSS Modules Strategy
 
 ### 1. **Global Styles** (`src/styles/globals.css`)
+
 - CSS custom properties (variables)
 - Global resets and base styles
 - Typography defaults
 - Accessibility improvements
 
 ### 2. **Component Styles** (`src/styles/components/`)
+
 - Reusable UI components
 - Use CSS Module composition with `composes:`
 - Consistent naming conventions
 
 ### 3. **Layout Styles** (`src/styles/layouts/`)
+
 - Page layouts and grids
 - Responsive utilities
 - Container styles
 
 ### 4. **Utility Styles** (`src/styles/utilities/`)
+
 - Single-purpose utility classes
 - Typography helpers
 - Spacing utilities
 
 ### 5. **Page-Specific Styles** (`src/app/**/page.module.css`)
+
 - Only unique styles for that specific page
 - Compose from shared modules when possible
 
 ## 🔧 Usage Examples
 
 ### Using Shared Components
+
 ```tsx
-import buttonStyles from "@/styles/components/buttons.module.css";
-import layoutStyles from "@/styles/layouts/page.module.css";
+import buttonStyles from '@/styles/components/buttons.module.css';
+import layoutStyles from '@/styles/layouts/page.module.css';
 
 <div className={layoutStyles.pageGrid}>
-  <button className={buttonStyles.primary}>
-    Click me
-  </button>
-</div>
+  <button className={buttonStyles.primary}>Click me</button>
+</div>;
 ```
 
 ### CSS Module Composition
+
 ```css
 /* In buttons.module.css */
 .base {
@@ -97,12 +102,12 @@ All design tokens are centralized in `globals.css`:
   /* Colors */
   --background: #ffffff;
   --foreground: #171717;
-  
+
   /* Spacing Scale */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
-  
+
   /* Border Radius */
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -113,6 +118,7 @@ All design tokens are centralized in `globals.css`:
 ## 📱 Responsive Design
 
 Use consistent breakpoints in all modules:
+
 ```css
 /* Mobile first approach */
 .component {
@@ -135,25 +141,37 @@ Use consistent breakpoints in all modules:
 ## 🚀 Alternative Approaches
 
 ### Option A: Tailwind CSS
+
 For utility-first approach, consider adding Tailwind:
+
 ```bash
 npm install tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
 
 ### Option B: Styled Components
+
 For CSS-in-JS approach:
+
 ```bash
 npm install styled-components
 npm install --save-dev @types/styled-components
 ```
 
 ### Option C: CSS Variables + Utility Classes
+
 Create a utility-first system with CSS modules:
+
 ```css
-.flex { display: flex; }
-.items-center { align-items: center; }
-.gap-4 { gap: var(--spacing-md); }
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.gap-4 {
+  gap: var(--spacing-md);
+}
 ```
 
 ## 🔍 Benefits of This Approach
