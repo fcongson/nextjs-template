@@ -6,7 +6,7 @@
 // App Configuration
 // ============================================
 export const APP_CONFIG = {
-  name: 'Next.js Template',
+  name: process.env.NEXT_PUBLIC_APP_NAME || 'Next.js Template',
   description: 'A modern Next.js template with TypeScript',
   version: '1.0.0',
   author: 'Your Name',
