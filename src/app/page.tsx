@@ -1,15 +1,16 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 // Components
-import { Button, PageLayout, PageFooter } from '@/components';
+import { Button, PageFooter, PageLayout } from '@/components';
 
 // Hooks
 import { useMounted } from '@/hooks';
 
 // Styles
+import pageStyles from '@/app/page.module.css';
 import buttonStyles from '@/styles/components/buttons.module.css';
 import typographyStyles from '@/styles/utilities/typography.module.css';
 
@@ -26,7 +27,7 @@ export default function Home(): React.JSX.Element {
 
   return (
     <PageLayout>
-      <h1 className={typographyStyles.tabularNums}>
+      <h1 className={`${typographyStyles.tabularNums} ${pageStyles.time}`}>
         {isMounted ? time : '00:00:00'}
       </h1>
 

@@ -1,1 +1,6 @@
 /* Page-specific styles for the home page */
+
+.time {
+  display: flex;
+  justify-content: center;
+}
